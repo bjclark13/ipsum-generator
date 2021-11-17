@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function IpsumForm({ submitForm, max }: { submitForm: (p: number) => {}, max: number }) {
+function IpsumForm({ submitForm, max }: { submitForm: (p: number) => void, max: number }) {
     const [paragraphs, setParagraphs] = useState<number>(1)
 
     return <form onSubmit={(e) => {

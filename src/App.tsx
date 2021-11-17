@@ -6,7 +6,8 @@ import IpsumGenerator from './IpsumGenerator';
 function App() {
   return (
     <div className="App">
-      <IpsumGenerator/>
+      <h1>Ipsum Generator </h1>
+      <IpsumGenerator />
     </div>
   );
 }
