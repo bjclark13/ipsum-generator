@@ -42,7 +42,9 @@ function IpsumGenerator() {
         <main>
             <IpsumForm max={1000} submitForm={onSubmit} />
 
-            <IpsumDisplay paragraphs={actualPs} />
+            <IpsumDisplay paragraphs={actualPs}>
+                <hr />
+            </IpsumDisplay>
         </main >
     )
 }

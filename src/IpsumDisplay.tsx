@@ -1,6 +1,8 @@
-function IpsumDisplay({ paragraphs }: { paragraphs: string[] }) {
+import { ReactNode } from "react";
+
+function IpsumDisplay({ paragraphs, children }: { paragraphs: string[], children: ReactNode }) {
     return (
-        <>{paragraphs.map(paragraph => <p>{paragraph}</p>)}</>
+        <>{paragraphs.map(paragraph => <p>{paragraph} {children}</p>)}</>
     )
 }
 
