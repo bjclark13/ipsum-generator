@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import IpsumForm from './IpsumForm';
 import IpsumDisplay from './IpsumDisplay';
 import getIpsum from './getIpsum';
@@ -15,14 +15,16 @@ function IpsumGenerator() {
         const defaultPs = 3;
 
         getIpsum(defaultPs)
-        .then((paragraphs) => {
-            setPs(paragraphs);
-        });
+            .then((paragraphs) => {
+                setPs(paragraphs);
+            });
 
     }, [])
 
 
-    const onSubmit = (ps: number) => {
+    // ensuring that the function doesn't change
+    // and trigger a useEffect function call
+    const onSubmit = useCallback((ps: number) => {
         // call getIpsum
         // returns a promise
         // when that promise resolves,
@@ -34,7 +36,7 @@ function IpsumGenerator() {
 
 
         // setPs(possiblePs.slice(0, ps))
-    };
+    }, []);
 
     return (
         <main>
